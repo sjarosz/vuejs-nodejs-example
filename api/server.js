@@ -8,21 +8,21 @@ const app = express(),
 const widgets = [
   {
     id: "1",
-    firstName: "first1",
-    lastName: "last1",
-    email: "abc@gmail.com"
+    itemName: "odd",
+    altName: "bit",
+    description: "A small thing"
   },
   {
     id: "2",
-    firstName: "first2",
-    lastName: "last2",
-    email: "abc@gmail.com"
+    itemName: "end",
+    altName: "bob",
+    description: "A different product"
   },
   {
     id: "3",
-    firstName: "first3",
-    lastName: "last3",
-    email: "abc@gmail.com"
+    itemName: "device",
+    altName: "gadget",
+    description: "The next big thing"
   }
 ];
 

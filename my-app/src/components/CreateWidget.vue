@@ -6,18 +6,18 @@
             <form>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label htmlFor="exampleInputEmail1">First Name</label>
-                        <input type="text" class="form-control" v-model="firstName" name="firstname" id="firstname" aria-describedby="emailHelp" placeholder="First Name" />
+                        <label htmlFor="exampleInputItem1">Item Name</label>
+                        <input type="text" class="form-control" v-model="itemName" name="itemname" id="itemname" aria-describedby="descriptionHelp" placeholder="Item Name" />
                     </div>
                     <div class="form-group col-md-6">
-                        <label htmlFor="exampleInputPassword1">Last Name</label>
-                        <input type="text" class="form-control" v-model="lastName" name="lastname" id="lastname" placeholder="Last Name" />
+                        <label htmlFor="exampleInputAlt1">Alternate Name</label>
+                        <input type="text" class="form-control" v-model="altName" name="altname" id="altname" placeholder="Alternate Name" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <label htmlFor="exampleInputEmail1">Email</label>
-                        <input type="text" class="form-control" v-model="email" name="email" id="email" aria-describedby="emailHelp" placeholder="Email" />
+                        <label htmlFor="exampleInputDesc1">Description</label>
+                        <input type="text" class="form-control" v-model="description" name="description" id="description" aria-describedby="descriptionHelp" placeholder="Description" />
                     </div>
                 </div>
                 <button type="button" @click='createWidget()' class="btn btn-danger">Create</button>
@@ -32,26 +32,26 @@ export default {
   name: 'CreateWidget',
   data() {
     return {
-      firstName: '',
-      lastName: '',
-      email: ''
+      itemName: '',
+      altName: '',
+      description: ''
     }
   },
   methods: {
       createWidget() {
-          console.log(this.firstName)
+          console.log(this.itemName)
           const payload = {
-              firstName: this.firstName,
-              lastName: this.lastName,
-              email: this.email
+              itemName: this.itemName,
+              altName: this.altName,
+              description: this.description
           }
           this.$emit('createWidget', payload)
           this.clearForm();
       },
       clearForm() {
-          this.firstName = "";
-          this.lastName = "";
-          this.email = "";
+          this.itemName = "";
+          this.altName = "";
+          this.description = "";
       }
   }
 }

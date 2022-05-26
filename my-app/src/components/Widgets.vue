@@ -5,17 +5,17 @@
             <thead>
             <tr>
                 <th>Widget Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
+                <th>Item name</th>
+                <th>Alternate name</th>
+                <th>Description</th>
             </tr>
             </thead>
             <tbody>
               <tr v-for="item in widgets" :key="item.id">
                   <td>{{ item.id }}</td>
-                  <td>{{ item.firstName }}</td>
-                  <td>{{ item.lastName }}</td>
-                  <td>{{ item.email }}</td>
+                  <td>{{ item.itemName }}</td>
+                  <td>{{ item.altName }}</td>
+                  <td>{{ item.description }}</td>
               </tr>
             </tbody>
         </table>
