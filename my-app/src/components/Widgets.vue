@@ -1,17 +1,17 @@
 <template>
     <div class="container">
-        <h2>Users</h2>
+        <h2>Widgets</h2>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>User Id</th>
+                <th>Widget Id</th>
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
             </tr>
             </thead>
             <tbody>
-              <tr v-for="item in users" :key="item.id">
+              <tr v-for="item in widgets" :key="item.id">
                   <td>{{ item.id }}</td>
                   <td>{{ item.firstName }}</td>
                   <td>{{ item.lastName }}</td>
@@ -25,7 +25,7 @@
 <script>
 
     export default {
-        name: 'Users',
-        props: ['users']
+        name: 'Widgets',
+        props: ['widgets']
      }
 </script>

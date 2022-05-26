@@ -5,7 +5,7 @@ const app = express(),
       port = 3070;
 
 // place holder for the data
-const users = [
+const widgets = [
   {
     id: "1",
     firstName: "first1",
@@ -29,17 +29,17 @@ const users = [
 app.use(bodyParser.json());
 app.use(express.static(process.cwd() + '/my-app/dist'));
 
-app.get('/api/users', (req, res) => {
-  console.log('api/users called!!!!!!!')
-  res.json(users);
+app.get('/api/widgets', (req, res) => {
+  console.log('api/widgets called!!!!!!!')
+  res.json(widgets);
 });
 
-app.post('/api/user', (req, res) => {
-  const user = req.body.user;
-  user.id = randomId(10);
-  console.log('Adding user:::::', user);
-  users.push(user);
-  res.json("user addedd");
+app.post('/api/widget', (req, res) => {
+  const widget = req.body.widget;
+  widget.id = randomId(10);
+  console.log('Adding widget:::::', widget);
+  widgets.push(widget);
+  res.json("widget addedd");
 });
 
 app.get('/', (req,res) => {

@@ -4,58 +4,58 @@
     <div class="container mrgnbtm">
           <div class="row">
             <div class="col-md-8">
-                <CreateUser @createUser="userCreate($event)" />
+                <CreateWidget @createWidget="widgetCreate($event)" />
             </div>
             <div class="col-md-4">
-                <DisplayBoard :numberOfUsers="numberOfUsers" @getAllUsers="getAllUsers()" />
+                <DisplayBoard :numberOfWidgets="numberOfWidgets" @getAllWidgets="getAllWidgets()" />
             </div>
           </div>
     </div>
     <div class="row mrgnbtm">
-        <Users v-if="users.length > 0" :users="users" />
+        <Widgets v-if="widgets.length > 0" :widgets="widgets" />
     </div>
   </div>
 </template>
 
 <script>
 import Header from './Header.vue'
-import CreateUser from './CreateUser.vue'
+import CreateWidget from './CreateWidget.vue'
 import DisplayBoard from './DisplayBoard.vue'
-import Users from './Users.vue'
-import { getAllUsers, createUser } from '../services/UserService'
+import Widgets from './Widgets.vue'
+import { getAllWidgets, createWidget } from '../services/WidgetService'
 
 export default {
   name: 'Dashboard',
   components: {
     Header,
-    CreateUser,
+    CreateWidget,
     DisplayBoard,
-    Users
+    Widgets
   },
   data() {
       return {
-          users: [],
-          numberOfUsers: 0
+          widgets: [],
+          numberOfWidgets: 0
       }
   },
   methods: {
-    getAllUsers() {
-      getAllUsers().then(response => {
+    getAllWidgets() {
+      getAllWidgets().then(response => {
         console.log(response)
-        this.users = response
-        this.numberOfUsers = this.users.length
+        this.widgets = response
+        this.numberOfWidgets = this.widgets.length
       })
     },
-    userCreate(data) {
+    widgetCreate(data) {
       console.log('data:::', data)
-      createUser(data).then(response => {
+      createWidget(data).then(response => {
         console.log(response);
-        this.getAllUsers();
+        this.getAllWidgets();
       });
     }
   },
   mounted () {
-    this.getAllUsers();
+    this.getAllWidgets();
   }
 }
 </script>

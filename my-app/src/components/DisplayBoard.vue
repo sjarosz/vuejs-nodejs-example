@@ -1,11 +1,11 @@
 <template>
     <div class="display-board">
-        <h4>Users Created</h4>
+        <h4>Widgets Created</h4>
         <div class="number">
-        {{numberOfUsers}}
+        {{numberOfWidgets}}
         </div>
         <div class="btn">
-            <button @click='getAllUsers()' type="button" class="btn btn-warning">Get all Users</button>
+            <button @click='getAllWidgets()' type="button" class="btn btn-warning">Get all Widgets</button>
         </div>
     </div>
 </template>
@@ -13,10 +13,10 @@
 <script>
     export default {
         name: 'DisplayBoard',
-        props: ['numberOfUsers'],
+        props: ['numberOfWidgets'],
         methods: {
-            getAllUsers() {
-                this.$emit('getAllUsers')
+            getAllWidgets() {
+                this.$emit('getAllWidgets')
             }
         }
     }
