@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-nodejs 
+  labels:
+    app: vue-nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vue-nodejs
+  template:
+    metadata:
+      labels:
+        app: vue-nodejs
+    spec:
+      containers:
+      - name: vue-nodejs
+        image: vue-nodejs 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3070 

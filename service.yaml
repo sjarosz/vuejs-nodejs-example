@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vue-nodejs 
+  labels:
+    app: vue-nodejs
+spec:
+  clusterIP: None
+  ports:
+  - name: http
+    port: 3070
+  selector:
+    app: vue-nodejs

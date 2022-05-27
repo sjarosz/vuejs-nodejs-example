@@ -27,10 +27,12 @@ const widgets = [
 ];
 
 app.use(bodyParser.json());
-app.use(express.static(process.cwd() + '/my-app/dist'));
+app.use(express.static(process.cwd() + '/vuenodejs-app/dist'));
 
 app.get('/api/widgets', (req, res) => {
   console.log('api/widgets called!!!!!!!')
+  console.log("test"+req.header("host"))
+
   res.json(widgets);
 });
 
@@ -43,7 +45,7 @@ app.post('/api/widget', (req, res) => {
 });
 
 app.get('/', (req,res) => {
-  res.sendFile(process.cwd() + '/my-app/dist/index.html');
+  res.sendFile(process.cwd() + '/vuenodejs-app/dist/index.html');
 });
 
 app.listen(port, () => {
