@@ -1,0 +1,21 @@
+[{
+	"op": "add",
+	"path": "/spec/rules/-",
+	"value": {
+		"host": "jrsz-myappname.catalyst.forgerock.org" ,
+		"http": {
+			"paths": [{
+				"backend": {
+					"service": {
+						"name": "ig",
+						"port": {
+							"number": 8080
+						}
+					}
+				},
+				"path": "/",
+				"pathType": "Prefix"
+			}]
+		}
+	}
+}]
