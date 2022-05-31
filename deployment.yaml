@@ -15,6 +15,12 @@ spec:
         app: vue-nodejs
     spec:
       containers:
+      - name: ig
+        image: eu.gcr.io/devops-poc-toolkit/stevenj/ig 
+        env:         
+        - name: EDGE_COMPONENT 
+          value: "spa"
+        imagePullPolicy: Always
       - name: vue-nodejs
         image: vue-nodejs 
         imagePullPolicy: Always
